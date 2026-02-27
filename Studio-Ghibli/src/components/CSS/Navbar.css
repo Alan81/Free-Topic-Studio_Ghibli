@@ -1,0 +1,330 @@
+@import url('https://fonts.googleapis.com/css2?family=Chicle&family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400..900&display=swap');
+
+
+:root{
+    --White: #ffffff;
+    --Black: #000000;
+    --Dark-Ocean: #1C434A;
+    --Light-greay-blue: #8FC6B7;
+
+    --ff-Cinzel-Decorative: 'Cinzel Decorative', 'sant-serif';
+    --fs-1: 0.75rem;
+    --fs-2: 1rem;
+    --fs-3: 1.25rem;
+    --fs-4: 1.5rem;
+    --fs-5: 1.75rem;
+
+    --py-1: 0.75rem;
+    --py-2: 1rem;
+    --py-3: 1.25rem;
+    --py-4: 1.5rem;
+    --py-5: 1.75rem;
+}
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {list-style: none;}
+
+a,
+img,
+span,
+input,
+button,
+ion-icon {display: block;}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+input,
+button {
+    background: none;
+    border: none;
+    font: inherit;
+}
+
+input {width: 100%;}
+
+button {cursor: pointer;}
+
+html {
+    font-family: var(--ff-Cinzel-Decorative);
+    font-size: var(--fs-2);
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--White);
+    color: var(--Black);
+    font-size: var(--fs-4);
+    font-weight: 700;
+    line-height: 1.6;
+}
+
+:focus-visible {outline-offset: 4px;}
+
+::-webkit-scrollbar{
+    width: 1rem;
+    height: 0.5rem;
+}
+
+::-webkit-scrollbar-track { background: hsl(0, 0%, 95%);}
+
+::-webkit-scrollbar-thumb { background: hsl(0, 0%, 80%);}
+
+::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%);}
+
+/* -------------------------------------------------------- */
+
+.container{
+    position: relative;
+    padding-top: var(--py-3);
+    padding-left: var(--py-4);
+    padding-right: var(--py-4);
+}
+
+.has-bg-image {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.h1,
+.h2,
+.h3,
+.h2-large {
+    color: var(--Black);
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+
+
+/* ---------------------------------------------------------- */
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: var(--py-2);
+    margin-left: 4rem;
+    margin-right: 2rem;
+}
+
+.logo{
+    width: 280px;
+    height: 45px;
+}
+
+.logo:hover {
+    transform: scale(1.2);
+    transition: transform 0.5s ease;
+}
+
+.section-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.menu-option{
+    display: inline-block;
+    padding-top: var(--py-2);
+    padding-bottom: var(--py-2);
+    padding-left: var(--py-2);
+    padding-right: var(--py-2);
+    font-size: var(--fs-4);
+}
+
+.menu-option:hover{ 
+    transform: scale(1.2);
+    transition: transform 0.4s ease;
+}
+
+@media (max-width: 1400px) {
+
+    .navbar {
+        margin-left: var(--py-4);
+        margin-right: var(--py-1);
+    }
+
+    .logo {
+        margin-left: var(--py-2);
+        width: 280px;
+        height: 40px;
+    }
+
+    .menu {
+        gap: 0;
+    }
+
+    .menu-option {
+        font-size: var(--fs-3);
+    }
+
+}
+
+@media (max-width: 1250px) {
+
+    .navbar {
+        margin-left: var(--py-1);
+        margin-right: var(--py-1);
+    }
+
+    .logo {
+        margin-left: 0;
+        width: 280px;
+        height: 40px;
+    }
+
+    .menu {
+        gap: 0;
+    }
+
+    .menu-option {
+        font-size: var(--fs-3);
+    }
+
+}
+
+
+@media (max-width: 1200px) {
+
+    .navbar {
+        margin-left: var(--py-2);
+        margin-right: var(--py-1);
+    }
+
+    .logo {
+        margin-left: var(--py-3);
+        width: 190px;
+        height: 30px;
+    }
+
+    .menu {
+        gap: 0;
+    }
+
+    .menu-option {
+        font-size: var(--fs-2);
+    }
+
+}
+
+@media (max-width: 1106px) {
+    .navbar {
+        margin-top: var(--py-1);
+    }
+
+    .logo {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 1016px) {
+    .navbar {
+        margin-top: 0.25rem;
+        margin-left: 0rem;
+        margin-right: var(--py-1);
+    }
+}
+
+@media (max-width: 996px) {
+    .navbar {
+        margin-top: 0;
+        margin-left: var(--py-5);
+        margin-right: var(--py-1);
+    }
+    .logo {
+        margin-left: var(--py-2);
+    }
+}
+
+@media (max-width: 900px) {
+    .navbar {
+        margin-top: 0;
+        margin-left: var(--py-0);
+        margin-right: var(--py-1);
+    }
+    .logo {
+        margin-left: 0;
+    }
+}
+
+
+@media (max-width: 868px) {
+
+    .container {
+        padding-top: var(--py-1);
+    }
+    .navbar {
+        margin-top: 0;
+        margin-left: var(--py-5);
+        margin-right: var(--py-1);
+    }
+
+    .logo {
+        width: 170px;
+        height: 25px;
+    }
+
+    .menu-option {
+        font-size: var(--fs-1);
+    }
+}
+
+@media (max-width: 800px) {
+    .navbar {
+        margin-left: var(--py-1);
+    }
+
+    .logo {
+        width: 160px;
+        height: 22px;
+    }
+}
+
+@media (max-width: 700px) {
+    .logo {
+        width: 150px;
+        height: 20px;
+    }
+
+    .navbar {
+        margin-left: var(--py-1);
+        margin-right: 0;
+    }
+
+    .menu-option {
+        font-size: 0.6rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .logo {
+        width: 100px;
+        height: 15px;
+    }
+
+    .navbar {
+        margin: 0;
+    }
+
+    .menu-option {
+        font-size: 0.5rem;
+    }
+}
