@@ -27,54 +27,51 @@ const Posters = [
 
 const Hero = () => {
   return (
-    <div className='container'>
-
-      <div className='container-hero'>
-
-        <div className='poster-row'>
-
-          
-
-          {Posters.map((poster) => (
-            <div className={`poster-card ${poster.isCenter ? 'poster-card-center' : ''}`} key={poster.id}>
-              <div className='poster-container'>
-                {/* Верхний текст */}
-                <svg viewBox="0 0 400 50" className='poster-title-top'>
-                  <path id={`curve-top-${poster.id}`} d="M 50,40 Q 200, -60 350,40" fill="transparent"/>
-                  <text className='curved-text'>
-                    <textPath href={`#curve-top-${poster.id}`} startOffset="50%" textAnchor="middle">
-                      {poster.text}
-                    </textPath>
-                  </text>
-                </svg>
-                
-                <div className='poster'>
-                  <img src={poster.img} alt={poster.text} className='img-poster' />
+    <section id="home" className='hero-section'> {/* Добавлен id */}
+      <div className='container'>
+        <div className='container-hero'>
+          <div className='poster-row'>
+            {Posters.map((poster) => (
+              <div className={`poster-card ${poster.isCenter ? 'poster-card-center' : ''}`} key={poster.id}>
+                <div className='poster-container'>
+                  {/* Верхний текст */}
+                  <svg viewBox="0 0 400 50" className='poster-title-top'>
+                    <path id={`curve-top-${poster.id}`} d="M 50,40 Q 200, -60 350,40" fill="transparent"/>
+                    <text className='curved-text'>
+                      <textPath href={`#curve-top-${poster.id}`} startOffset="50%" textAnchor="middle">
+                        {poster.text}
+                      </textPath>
+                    </text>
+                  </svg>
+                  
+                  <div className='poster'>
+                    <img src={poster.img} alt={poster.text} className='img-poster' />
+                  </div>
+                  
+                  {/* Нижний текст */}
+                  <svg viewBox="0 0 400 50" className='poster-title-bottom'>
+                    <path 
+                      id={`curve-bottom-${poster.id}`} 
+                      d="M 50,10 Q 200, 100 350,10" 
+                      fill="transparent" 
+                    />
+                    <text className='curved-text'>
+                      <textPath 
+                        href={`#curve-bottom-${poster.id}`} 
+                        startOffset="50%" 
+                        textAnchor="middle"
+                      >
+                        {poster.text}
+                      </textPath>
+                    </text>
+                  </svg>
                 </div>
-                
-                {/* Нижний текст */}
-                <svg viewBox="0 0 400 50" className='poster-title-bottom'>
-                  <path 
-                    id={`curve-bottom-${poster.id}`} 
-                    d="M 50,10 Q 200, 100 350,10" 
-                    fill="transparent" 
-                  />
-                  <text className='curved-text'>
-                    <textPath 
-                      href={`#curve-bottom-${poster.id}`} 
-                      startOffset="50%" 
-                      textAnchor="middle"
-                    >
-                      {poster.text}
-                    </textPath>
-                  </text>
-                </svg>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

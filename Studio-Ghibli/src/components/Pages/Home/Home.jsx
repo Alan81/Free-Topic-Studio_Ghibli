@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef } from 'react' // <-- Добавьте useRef и useEffect
 import '../../CSS/Home/Home.css'
 import Vector from '../../Image/Banner/Banner.png'
 import pattern from '../../Image/Pattern/Home Banner Pattern.png'
@@ -8,28 +8,34 @@ import BgPattern from '../../Image/Pattern/Background.png'
 import Navbar from '../Navbar'
 import Hero from './Hero'
 import Favorite from './Favorite'
+import Catalog from './Catalog'
+import About from './About'
+import Footer from '../Footer'
+import ScrollToTop from '../ScrollToTop'
 
 const Home = () => {
-    const cloudLeftRef = useRef(null);
-    const cloudRightRef = useRef(null);
+   // Создаем refs для облаков
+   const cloudLeftRef = useRef(null);
+   const cloudRightRef = useRef(null);
 
-    const bgImage = {
+   const bgImage = {
         backgroundImage: `url(${pattern}), url(${Vector})`,
         backgroundPosition: "center",
         backgroundRepeat: " no-repeat",
         backgroundSize: "cover",
         width: "100%",
+      }
+    
+    const bgPattern ={
+      backgroundImage: `url(${BgPattern})`,
+      backgroundPosition: "center",
+      backgroundRepeat: " no-repeat",
+      backgroundSize: "cover",
+      width: "100%",
+      minHeight: "100vh", 
     }
     
-    const bgPattern = {
-        backgroundImage: `url(${BgPattern})`,
-        backgroundPosition: "center",
-        backgroundRepeat: " no-repeat",
-        backgroundSize: "cover",
-        width: "100%",
-        minHeight: "100vh", 
-    }
-
+    // ВОЗВРАЩАЕМ useEffect с логикой движения облаков
     useEffect(() => {
         const handleScroll = () => {
             const scrollY = window.scrollY;
@@ -55,37 +61,47 @@ const Home = () => {
         };
 
         window.addEventListener('scroll', handleScroll, { passive: true });
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+        
+        // Очищаем слушатель при размонтировании
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []); // Пустой массив зависимостей - эффект сработает один раз при монтировании
 
-    return (
-        <div>
-            <div style={bgImage}>
-                <div className=''>
-                    <Navbar /> 
-                    <Hero />
-                    <div className='cloud-group'>
-                        <img 
-                            src={Cloud_2} 
-                            alt="" 
-                            className='img-cloud-l'
-                            ref={cloudLeftRef}
-                        />
-                        <img 
-                            src={Cloud} 
-                            alt="" 
-                            className='img-cloud-r'
-                            ref={cloudRightRef}
-                        />  
-                    </div>
-                </div>
-            </div>
-
-            <div style={bgPattern}>
-                <Favorite />
-            </div>
+  return (
+    <div>
+      <div style={bgImage} >
+        <div  className=''>
+          <Navbar/> 
+          <Hero/>
+          <div className='cloud-group'>
+            {/* Добавляем ref к изображениям */}
+            <img 
+              src={Cloud_2} 
+              alt="" 
+              className='img-cloud-l'
+              ref={cloudLeftRef} // <-- Добавлено
+            />
+            <img 
+              src={Cloud} 
+              alt="" 
+              className='img-cloud-r'
+              ref={cloudRightRef} // <-- Добавлено
+            />  
+          </div>
         </div>
-    )
+      </div>
+      
+      <div style={bgPattern}>
+        <Favorite/>
+        <Catalog/>
+        <About/>
+        <Footer/>
+      </div>
+
+      <ScrollToTop/>
+    </div>
+  )
 }
 
 export default Home

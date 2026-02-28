@@ -5,47 +5,77 @@ import Logo from "../Image/Banner/Logo.png"
 const Menu = [
   {
     id: 1, 
-    name: "Home", 
-    link: "/#",
+    name: "Home",
+    link: "#home", // Якорь на Hero секцию
   },
   {
     id: 2, 
     name: "Catalog",
-    link: "/#",
+    link: "#catalog", // Якорь на Catalog секцию
   }, 
   {
     id: 3,
-    name: "About us", 
-    link: "/#",
+    name: "About us",
+    link: "#about", // Якорь на About секцию
   },
   {
     id: 4, 
-    name: "Contacts", 
-    link: "/#",
+    name: "Contacts",
+    link: "#contacts", // Якорь на Footer секцию
   }
 ];
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [activeLink, setActiveLink] = useState('#home');
 
   useEffect(() => {
     const handleScroll = () => {
+      // Изменение стиля навбара при скролле
       if (window.scrollY > 50) {
         setScrolled(true);
       } else {
         setScrolled(false);
       }
+
+      // Определение активной секции
+      const sections = document.querySelectorAll('section[id]');
+      const scrollY = window.scrollY;
+
+      sections.forEach(section => {
+        const sectionHeight = section.offsetHeight;
+        const sectionTop = section.offsetTop - 100;
+        const sectionId = section.getAttribute('id');
+        
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+          setActiveLink(`#${sectionId}`);
+        }
+      });
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleClick = (e, link) => {
+    e.preventDefault();
+    const targetId = link.substring(1); // Убираем #
+    const targetElement = document.getElementById(targetId);
+    
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+      setActiveLink(link);
+    }
+  };
+
   return (
     <div className={`navbar-container ${scrolled ? 'navbar-scrolled' : ''}`}>
       <div className='container'>
         <div className='navbar'>
-          <a href="#" className='Logo'>
+          <a href="#home" className='Logo' onClick={(e) => handleClick(e, '#home')}>
             <img src={Logo} alt="Logo" className='logo'/>
           </a>
           
@@ -53,7 +83,11 @@ const Navbar = () => {
             <ul className='menu'>
               {Menu.map((menu) => (
                 <li key={menu.id} className='menu-item'>
-                  <a href={menu.link} className='menu-option'>
+                  <a 
+                    href={menu.link} 
+                    className={`menu-option ${activeLink === menu.link ? 'active' : ''}`}
+                    onClick={(e) => handleClick(e, menu.link)}
+                  >
                     {menu.name}
                   </a>
                 </li>
