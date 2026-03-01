@@ -134,16 +134,16 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: var(--py-2);
-    margin-left: clamp(1rem, 5vw, 5rem);
-    margin-right: clamp(1rem, 5vw, 5rem);
+    margin-top: var(--py-3);
+    margin-left: clamp(1rem, 5vw, 7rem);
+    margin-right: clamp(1rem, 5vw, 3rem);
     gap: clamp(1rem, 3vw, 2rem);
     flex-wrap: wrap;
 }
 
 .logo {
     width: auto;
-    max-width: clamp(150px, 20vw, 250px); 
+    max-width: clamp(150px, 20vw, 380px); 
     height: auto;
     min-height: 35px;
     transition: transform 0.3s ease;
@@ -182,7 +182,7 @@ body {
 .menu-option {
     display: inline-block;
     padding: clamp(0.3rem, 1.2vw, var(--py-2));
-    font-size: clamp(0.9rem, 2vw, var(--fs-4));
+    font-size: clamp(0.9rem, 2vw, var(--fs-5));
     font-weight: 500;
     transition: all 0.3s ease;
     position: relative;

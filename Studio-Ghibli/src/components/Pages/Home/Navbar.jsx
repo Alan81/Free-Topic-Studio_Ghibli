@@ -1,27 +1,27 @@
 import React, { useState, useEffect } from 'react'
-import '../CSS/Navbar.css'
-import Logo from "../Image/Banner/Logo.png"
+import '../../CSS/Home/Navbar.css'
+import Logo from "../../Image/Banner/Logo.png"
 
 const Menu = [
   {
     id: 1, 
     name: "Home",
-    link: "#home", // Якорь на Hero секцию
+    link: "#home",
   },
   {
     id: 2, 
     name: "Catalog",
-    link: "#catalog", // Якорь на Catalog секцию
+    link: "#catalog",
   }, 
   {
     id: 3,
     name: "About us",
-    link: "#about", // Якорь на About секцию
+    link: "#about",
   },
   {
     id: 4, 
     name: "Contacts",
-    link: "#contacts", // Якорь на Footer секцию
+    link: "#contacts",
   }
 ];
 
@@ -31,14 +31,13 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Изменение стиля навбара при скролле
+
       if (window.scrollY > 50) {
         setScrolled(true);
       } else {
         setScrolled(false);
       }
 
-      // Определение активной секции
       const sections = document.querySelectorAll('section[id]');
       const scrollY = window.scrollY;
 

@@ -9,25 +9,29 @@ const Posters = [
         id: 1,
         img: Img1,
         text: 'The Wind Rises',
+        link: '#',
         isCenter: false
     },
     {
         id: 2,
         img: Img2,
         text: 'Spirited Away',
+        link: '#',
         isCenter: true
     },
     {
         id: 3,
         img: Img3,
         text: 'Only Yesterday',
+        link: '#',
         isCenter: false
     }
 ]
 
 const Hero = () => {
   return (
-    <section id="home" className='hero-section'> {/* Добавлен id */}
+    <section id="home" className='hero-section'>
+
       <div className='container'>
         <div className='container-hero'>
           <div className='poster-row'>
@@ -50,20 +54,12 @@ const Hero = () => {
                   
                   {/* Нижний текст */}
                   <svg viewBox="0 0 400 50" className='poster-title-bottom'>
-                    <path 
-                      id={`curve-bottom-${poster.id}`} 
-                      d="M 50,10 Q 200, 100 350,10" 
-                      fill="transparent" 
-                    />
-                    <text className='curved-text'>
-                      <textPath 
-                        href={`#curve-bottom-${poster.id}`} 
-                        startOffset="50%" 
-                        textAnchor="middle"
-                      >
-                        {poster.text}
-                      </textPath>
-                    </text>
+                    <path id={`curve-bottom-${poster.id}`} d="M 50,10 Q 200, 100 350,10" fill="transparent" />
+                      <text className='curved-text'>
+                        <textPath href={`#curve-bottom-${poster.id}`} startOffset="50%" textAnchor="middle">
+                          {poster.text}
+                        </textPath>
+                      </text>
                   </svg>
                 </div>
               </div>
