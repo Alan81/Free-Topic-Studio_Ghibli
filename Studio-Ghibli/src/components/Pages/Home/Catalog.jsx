@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import '../../CSS/Home/Catalog.css'
 import Img from '../../Image/Banner/Text Catalog of Works.png'
 import Bottom_Pattern from '../../Image/Pattern/Bottom Pattern.png'
@@ -161,7 +162,9 @@ const Catalog = () => {
                             </div> 
 
                             <div className='logButton'>
-                                <a href="#" className='logButtonText'>View All Films →</a>
+                                <Link to="/catalog" className='logButtonText'>
+                                    View All Films →
+                                </Link>
                             </div>
                             
 

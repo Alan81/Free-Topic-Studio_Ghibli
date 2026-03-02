@@ -1,16 +1,17 @@
-import React, { useEffect, useRef } from 'react' // <-- Добавьте useRef и useEffect
+import React, { useEffect, useRef } from 'react'
 import '../../CSS/Home/Home.css'
-import Vector from '../../Image/Banner/Banner.png'
-import pattern from '../../Image/Pattern/Home Banner Pattern.png'
-import Cloud from '../../Image/Pattern/Cloud Pattern_2.png'
-import Cloud_2 from '../../Image/Pattern/Cloud Pattern.png'
-import BgPattern from '../../Image/Pattern/Background.png'
 import Navbar from './Navbar'
 import Hero from './Hero'
 import Favorite from './Favorite'
 import Catalog from './Catalog'
 import About from './About'
 import Footer from '../Footer'
+import Vector from '../../Image/Banner/Banner.png'
+import pattern from '../../Image/Pattern/Home Banner Pattern.png'
+import Cloud from '../../Image/Pattern/Cloud Pattern_2.png'
+import Cloud_2 from '../../Image/Pattern/Cloud Pattern.png'
+import BgPattern from '../../Image/Pattern/Background.png'
+
 
 
 const Home = () => {
