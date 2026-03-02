@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react' 
 import '../../CSS/Catalog/CatalogSection.css'
 import Img1 from '../../Image/Pattern/Catalog Banner Top Pattern.png'
 import Img2 from '../../Image/Pattern/Catalog Banner Bottom Pattern.png'
@@ -6,10 +6,18 @@ import BgPattern from '../../Image/Pattern/Background.png'
 import CatalogNavbar from './CatalogNavbar'
 import CatalogHero from './CatalogHero'
 import CatalogFilms from './CatalogFilms'
+import CatalogAbout from './CatalogAbout'
+import Footer from '../Footer'
 
 
-
-const CatalogSection = () => {
+  const CatalogSection = () => {
+  useEffect(() => {
+    // Скроллим вверх при загрузке страницы
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }, []);
 
   const bgPattern ={
       backgroundImage: `url(${BgPattern})`,
@@ -31,6 +39,8 @@ const CatalogSection = () => {
           <img src={Img2} alt="" className='bg-image-pattern-bottom'/>
         </div>
         <CatalogFilms/>
+        <CatalogAbout/>
+        <Footer/>
       </div>
       
     </div>

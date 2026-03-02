@@ -178,19 +178,18 @@ const CatalogFilms = () => {
         : Poster.filter(poster => poster.genres.includes(selectedGenre));
 
     return (
-        <section id=""  className='catalog-section'>
-            <div className='catalog-Container'>
-                <div className='catalog-MainRow'>
+        <section id='catalog-films'  className='section'>
+            <div className='logContainer'>
+                <div className='logMainRow'>
 
-                    <div className='catalog-BannerSection'>
-                        <img src={Img} alt="Catalog Banner" className='catalog-bg-log-banner' />
+                    <div className='logBannerSection'>
+                        <img src={Img} alt="Catalog Banner" className='bg-log-banner' />
                     </div>
 
-                    <div className='catalog-CatalogRow'>
+                    <div className='CatalogRow'>
 
-                        <div className='catalog-genresGrid'>
-                            <ul className='catalog-grid'>
-
+                        <div className='logGenresGrid'>
+                            <ul className='logGrid'>
                                 <li className={selectedGenre === "All" ? "active" : ""} onClick={() => setSelectedGenre("All")}>
                                   All
                                 </li>
@@ -210,22 +209,21 @@ const CatalogFilms = () => {
                                 <li className={selectedGenre === "Adventure" ? "active" : ""} onClick={() => setSelectedGenre("Adventure")}>
                                     Adventure
                                 </li>
-
                             </ul>
                         </div>
 
-                        <div className='catalog-posterRow'>
+                        <div className='logPosterRow'>
                             <img src={Top_Pattern} alt="Top Pattern" className='TopPattern'/>
 
-                            <div className='catalog-posterGrid'>
+                            <div className='logPosterGrid'>
                                 {filteredPosters.map((poster) => (
-                                    <div key={poster.id} className="catalog-posterCard">
-                                        <a href={poster.link} className='catalog-posterLink'>
-                                            <img src={poster.img} alt={`Poster ${poster.id}`} className='catalog-posterImage'/>
+                                    <div key={poster.id} className="logPosterCard">
+                                        <a href={poster.link} className='logPosterLink'>
+                                            <img src={poster.img} alt={`Poster ${poster.id}`} className='logPosterImage'/>
                                         </a>
                                     </div>
                                 ))}
-                            </div> 
+                            </div>                            
 
                             <img src={Bottom_Pattern} alt="Bottom Pattern" className='BottomPattern' />
                         </div>

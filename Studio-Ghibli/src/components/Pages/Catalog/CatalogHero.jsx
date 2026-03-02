@@ -36,7 +36,7 @@ const Poster = [
 
 const CatalogHero = () => {
   return (
-    <section id="hero" className="catalog-hero-section"> 
+    <section id="catalog" className="catalog-hero-section"> 
       <div className='bg-container'>
         <div></div>
           <div className='-catalog-container-hero'>
