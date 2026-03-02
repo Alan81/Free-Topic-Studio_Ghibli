@@ -77,7 +77,7 @@ const Poster = [
         id: 10,
         img: Img10,
         link: "#",
-        genres: ["Romantic", "Drama"]  // Исправлено с "Pomantic" на "Romantic"
+        genres: ["Romantic", "Drama"]  
     },
     {
         id: 11,
@@ -115,34 +115,23 @@ const Catalog = () => {
 
                         <div className='logGenresGrid'>
                             <ul className='logGrid'>
-                                <li 
-                                    className={selectedGenre === "All" ? "active" : ""}
-                                    onClick={() => setSelectedGenre("All")}
-                                >
-                                    All
+                                <li className={selectedGenre === "All" ? "active" : ""} onClick={() => setSelectedGenre("All")}>
+                                  All
                                 </li>
-                                <li 
-                                    className={selectedGenre === "Drama" ? "active" : ""}
-                                    onClick={() => setSelectedGenre("Drama")}
-                                >
-                                    Drama
+
+                                <li className={selectedGenre === "Drama" ? "active" : ""} onClick={() => setSelectedGenre("Drama")}>
+                                  Drama
                                 </li>
-                                <li 
-                                    className={selectedGenre === "Fantasy" ? "active" : ""}
-                                    onClick={() => setSelectedGenre("Fantasy")}
-                                >
-                                    Fantasy
+
+                                <li className={selectedGenre === "Fantasy" ? "active" : ""} onClick={() => setSelectedGenre("Fantasy")}>
+                                  Fantasy
                                 </li>
-                                <li 
-                                    className={selectedGenre === "Romantic" ? "active" : ""}
-                                    onClick={() => setSelectedGenre("Romantic")}
-                                >
+
+                                <li className={selectedGenre === "Romantic" ? "active" : ""} onClick={() => setSelectedGenre("Romantic")}>
                                     Romantic
                                 </li>
-                                <li 
-                                    className={selectedGenre === "Adventure" ? "active" : ""}
-                                    onClick={() => setSelectedGenre("Adventure")}
-                                >
+
+                                <li className={selectedGenre === "Adventure" ? "active" : ""} onClick={() => setSelectedGenre("Adventure")}>
                                     Adventure
                                 </li>
                             </ul>

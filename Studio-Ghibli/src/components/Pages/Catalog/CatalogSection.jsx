@@ -5,6 +5,7 @@ import Img2 from '../../Image/Pattern/Catalog Banner Bottom Pattern.png'
 import BgPattern from '../../Image/Pattern/Background.png'
 import CatalogNavbar from './CatalogNavbar'
 import CatalogHero from './CatalogHero'
+import CatalogFilms from './CatalogFilms'
 
 
 
@@ -29,7 +30,7 @@ const CatalogSection = () => {
           <CatalogHero/>
           <img src={Img2} alt="" className='bg-image-pattern-bottom'/>
         </div>
-        
+        <CatalogFilms/>
       </div>
       
     </div>
