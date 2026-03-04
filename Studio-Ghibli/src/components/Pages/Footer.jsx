@@ -40,11 +40,11 @@ const Footer = () => {
               <li className='name-links'>Developer</li>
               <li className='Links'>
                 <img src={littel_Star} alt="" className='bg-image-links'/>
-                <a href="/">Alan</a>
+                <a href="/">Alan81</a>
               </li>
               <li className='Links'>
                 <img src={littel_Star} alt="" className='bg-image-links'/>
-                <a href="mailto:I_6464664@gmail.com">I_6464664@gmail.com</a>
+                <a href="mailto:I_6464664@gmail.com">i28691149@gmail.com</a>
               </li>
             </ul>
 
@@ -52,11 +52,11 @@ const Footer = () => {
               <li className='name-links'>Contacts</li>
               <li className='Links'>
                 <img src={littel_Star} alt="" className='bg-image-links'/>
-                <a href="https://t.me/L_6464646" target="_blank" rel="noopener noreferrer">Telegram: @L_6464646</a>
+                <a href="https://t.me/L_6464646" target="_blank" rel="noopener noreferrer">Telegram: @L_6469812</a>
               </li>
               <li className='Links'>
                 <img src={littel_Star} alt="" className='bg-image-links'/>
-                <a href="https://github.com/Alan" target="_blank" rel="noopener noreferrer">Git Hub: Alan</a>
+                <a href="https://github.com/Alan81" target="_blank" rel="noopener noreferrer">Git Hub: Alan81</a>
               </li>
             </ul>
           </div>
@@ -66,7 +66,7 @@ const Footer = () => {
           </div>
 
           <div className='autor-logo'>
-            <a href="#home" onClick={(e) => handleLinkClick(e, 'home')} className='autorname'>@Alan81</a>
+            <a href="#home" onClick={(e) => handleLinkClick(e, 'home')} className='autorname'>Alan81</a>
             <a href="#home" onClick={(e) => handleLinkClick(e, 'home')} className='logofooter'>Studio Ghibli</a>
           </div>
         </div>
